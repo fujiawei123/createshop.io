@@ -1,0 +1,115 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;1,100&display=swap');
+*{
+  margin:0;
+  padding:0;
+  font-family:'Poppins',san-serif;
+  color: rgb(120,255,0);
+}
+body{
+  min-height:100vh;
+  background: #141414;
+  width: 100%;
+  height: 100%;
+}
+
+
+.card{
+  width:320px;
+  height:450px;
+  background:#232323;
+  border-radius:20px;
+  position: relative;
+  overflow: hidden;
+}
+.card:before{
+  content:"";
+  position: absolute;
+  top:0;
+  left:0;
+  width: 100%;
+  height: 100%;
+  background: rgb(120,255,0);
+  clip-path:circle(150px at 80% 20%);
+  transition: 0.5s ease-in-out;
+}
+
+.card:hover:before{
+  clip-path:circle(300px at 80% -20%);
+}
+
+.card:after{
+  content:"创意";
+position:absolute;
+top:40%;
+left:-10%;
+font-size:10em;
+font-weight:800;
+font-style:italic;
+color:rgba(255,255,255,0.05);
+}
+.card .imgBx{
+  position: absolute;
+  top:50%;
+  transform: translateY(-50%);
+  z-index: 999;
+  width:100%;
+  height:220px;
+  transition: 0.5s;
+}
+.card:hover .imgBx{
+  top:0%;
+  transform:translateY(0%);
+}
+.card .imgBx img{
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  transform: translate(-50%,-50%) rotate(-25deg) rotateY(-180deg);
+  width:270px;
+}
+
+
+.card .contentBx{
+  position: absolute;
+  bottom: 0px;
+  width:100%;
+  height:100px;
+  text-align:center;
+  transition: 1s;
+  z-index:8;
+}
+
+.card .contentBx h2 {
+  font-weight:600;
+  letter-spacing:0px;
+  color:#FFF;
+}
+.card:hover .contentBx{
+  height:210px;
+}
+.card:hover .contentBx h2 {
+  font-weight:600;
+  letter-spacing:0px;
+  color:#FFF;
+}
+
+
+.card .contentBx a{
+  display: inline-block;
+  padding: 10px 20px;
+  background: #fff;
+  border-radius: 4px;
+  margin-top:10px;
+  text-decoration: none;
+  font-weight: 600;
+  color: #111;
+  opacity: 0;
+  transform: translateY(50px);
+  transition: 0.5s;
+}
+
+.card:hover .contentBx a{
+  opacity: 1;
+  transform: translateY(20px);
+  transition-delay: 0.8s;
+}
